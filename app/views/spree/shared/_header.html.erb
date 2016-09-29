@@ -1,0 +1,65 @@
+<div class="header clearfix">
+  <div class="topBar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 hidden-sm hidden-xs">
+          <ul class="list-inline">
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+            <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <ul class="list-inline pull-right">
+            <li><span><a data-toggle="modal" href='.login-modal'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create an account</a></span></li>
+            <li>
+              <ul class="nav navbar-nav navbar-right">
+                <li id="link-to-cart" data-hook>
+                  <noscript>
+                    <%= link_to Spree.t(:cart), '/cart' %>
+                  </noscript>
+                  &nbsp;
+                </li>
+                <script>Spree.fetch_cart('<%= j spree.cart_link_url %>')</script>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-main navbar-default" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <figure id="logo" class="navbar-brand" data-hook><%= logo img_options: {class: 'img-responsive', width: '138'}%></figure>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% @taxonomies.each do |taxonomy| %>
+            <li class="dropdown">
+              <%= link_to "#", data: { toggle: "dropdown" }, "aria-haspopup" => 'true' do %>
+                <%= taxonomy.name %> <span class="caret"></span>
+              <% end %>
+              <%= nav_tree(taxonomy.root, @taxon, 1) %>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>

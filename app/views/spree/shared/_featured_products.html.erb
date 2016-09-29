@@ -1,0 +1,71 @@
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+
+
+<% content_for :head do %>
+  <% if paginated_products.respond_to?(:total_pages) %>
+    <%= rel_next_prev_link_tags paginated_products %>
+  <% end %>
+<% end %>
+
+<div data-hook="products_search_results_heading">
+  <% if products.empty? %>
+    <div data-hook="products_search_results_heading_no_results_found">
+      <%= Spree.t(:no_products_found) %>
+    </div>
+  <% elsif params.key?(:keywords) %>
+    <div data-hook="products_search_results_heading_results_found">
+      <h6 class="search-results-title"><%= Spree.t(:search_results, keywords: h(params[:keywords])) %></h6>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <% if products.any? %>
+    <div id="products" class="row featuredProducts" data-hook>
+      <div class="col-xs-12">
+        <div class="page-header">
+          <h4>Featured Products</h4>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="owl-carousel featuredProductsSlider">
+          <% products.each do |product| %>
+            <div class="slide">
+              <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+              <div id="product_<%= product.id %>" class="<%= cycle("alpha", "secondary", "", "omega secondary", name: "classes") %> productBox" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+                <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
+                  <div class="productImage clearfix">
+                    <%= link_to image_tag(product.display_image.attachment(:large), itemprop: "image"), url, itemprop: 'url' %>
+                    <div class="productMasking">
+                      <ul class="list-inline btn-group" role="group">
+                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a class="btn btn-default" data-toggle="modal" href=".quick-view" ><i class="fa fa-eye"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="productCaption clearfix">
+                    <%= link_to url, class: 'info', itemprop: "name", title: product.name do %>
+                      <h5><%= truncate(product.name, length: 50) %></h5>
+                    <% end %>
+                    <h3>
+                      <%= display_price(product) %>
+                    </h3>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <% reset_cycle("classes") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% if paginated_products.respond_to?(:total_pages) %>
+  <%= paginate paginated_products %>
+<% end %>

@@ -1,0 +1,13 @@
+#= require jquery
+#= require jquery_ujs
+#= require bootstrap
+# = require spree
+# = require spree/frontend/checkout
+# = require spree/frontend/product
+# = require spree/frontend/cart
+#= require plugins/rs-plugin/jquery.themepunch.tools.min
+#= require plugins/rs-plugin/jquery.themepunch.revolution
+#= require plugins/owl-carousel/owl.carousel
+#= require plugins/selectbox/jquery.selectbox-0.1.3.min
+#= require plugins/countdown/jquery.syotimer
+#= require custom
