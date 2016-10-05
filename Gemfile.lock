@@ -176,6 +176,7 @@ GEM
       multi_json (~> 1.0)
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
+    high_voltage (3.0.0)
     highline (1.6.21)
     htmlentities (4.3.4)
     i18n (0.7.0)
@@ -360,6 +361,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   figaro
   font-awesome-rails (~> 4.6, >= 4.6.3.1)
+  high_voltage
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

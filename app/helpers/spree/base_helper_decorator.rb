@@ -1,4 +1,5 @@
 module Spree::BaseHelper
+  # include HighVoltage::StaticPage
 
   def layout_partial
     if devise_controller?

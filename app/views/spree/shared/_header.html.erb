@@ -1,52 +1,65 @@
 <div class="header clearfix">
-  <div class="topBar">
+  <div class="top-bar-dark">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 hidden-sm hidden-xs">
-          <ul class="list-inline">
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-            <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-          </ul>
+        <div class="col-sm-4 hidden-xs">
+          <!-- <div class="top-bar-socials">
+              <a href="#" class="social-icon-sm si-dark si-gray-round si-colored-facebook">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-facebook"></i>
+              </a>
+              <a href="#" class="social-icon-sm si-dark si-gray-round si-colored-twitter">
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon-sm si-dark si-gray-round si-colored-google-plus">
+                  <i class="fa fa-youtube"></i>
+                  <i class="fa fa-youtube"></i>
+              </a>
+          </div> -->
         </div>
-        <div class="col-md-6 col-xs-12">
-          <ul class="list-inline pull-right">
-            <li><span><a data-toggle="modal" href='.login-modal'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create an account</a></span></li>
-            <li>
-              <ul class="nav navbar-nav navbar-right">
-                <li id="link-to-cart" data-hook>
-                  <noscript>
-                    <%= link_to Spree.t(:cart), '/cart' %>
-                  </noscript>
-                  &nbsp;
-                </li>
-                <script>Spree.fetch_cart('<%= j spree.cart_link_url %>')</script>
-              </ul>
+        <div class="col-sm-8 text-right">
+          <ul class="list-inline top-dark-right">
+            <li><a href="#"><i class="fa fa-lock"></i> Login</a></li>
+            <li><a href="#"><i class="fa fa-user"></i> Sign Up</a></li>
+            <li id="link-to-cart" data-hook>
+              <noscript>
+                <%= link_to Spree.t(:cart), '/cart' %>
+              </noscript>
+              &nbsp;
             </li>
+            <script>Spree.fetch_cart('<%= j spree.cart_link_url %>')</script>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <nav class="navbar navbar-main navbar-default" role="navigation">
+  <nav class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </button>
-        <figure id="logo" class="navbar-brand" data-hook><%= logo('AerialHaus.png', img_options: {class: 'img-responsive', width: '180'}) %></figure>
+        <figure id="logo" class="navbar-brand" data-hook><%= logo('AerialHaus.png', img_options: {class: 'img-responsive', width: '250'}) %></figure>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to 'About', main_app.page_path('about') %>
+          </li>
+          <li>
+            <%= link_to 'Contact', main_app.page_path('contact') %>
+          </li>
+          <li>
+            <%= link_to 'Services', main_app.page_path('services') %>
+          </li>
           <% @taxonomies.each do |taxonomy| %>
             <li class="dropdown">
               <%= link_to "#", data: { toggle: "dropdown" }, "aria-haspopup" => 'true' do %>
