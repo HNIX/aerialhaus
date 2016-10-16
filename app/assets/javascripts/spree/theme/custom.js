@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 	            $(".topBar").css("display","block");
 	        }
 	    });
-	
+
 });
 
 //============================== ALL DROPDOWN ON HOVER =========================

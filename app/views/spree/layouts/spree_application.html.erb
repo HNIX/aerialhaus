@@ -10,24 +10,8 @@
   <body class="<%= body_class %> test" id="<%= @body_id || 'default' %>" data-hook="body">
 
     <%= render layout_partial %>
-  <script type="text/javascript">
-          /* Typed
-              ================================================== */
-              $(".element").each(function(){
-                  var $this = $(this);
-                  $this.typed({
-                  strings: $this.attr('data-elements').split(','),
-                  typeSpeed: 100, // typing speed
-                  backDelay: 3000 // pause before backspacing
-                  });
-              });
-      </script>
-    <script>$(".video-section").background({
-            source: {
-                poster: "img/typing_cover.jpg",
-                mp4: "<%= image_url('video/Aerial_Haus_Nashville.mp4') %>"
-            }
-        });
-      </script>
+    <%= javascript_include_tag 'spree/theme/theme' %>
+
+    <%= yield(:javascript) %>
   </body>
 </html>

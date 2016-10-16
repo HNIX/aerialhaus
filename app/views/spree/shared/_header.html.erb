@@ -3,25 +3,18 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 hidden-xs">
-          <!-- <div class="top-bar-socials">
-              <a href="#" class="social-icon-sm si-dark si-gray-round si-colored-facebook">
-                  <i class="fa fa-facebook"></i>
-                  <i class="fa fa-facebook"></i>
-              </a>
-              <a href="#" class="social-icon-sm si-dark si-gray-round si-colored-twitter">
-                  <i class="fa fa-twitter"></i>
-                  <i class="fa fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon-sm si-dark si-gray-round si-colored-google-plus">
-                  <i class="fa fa-youtube"></i>
-                  <i class="fa fa-youtube"></i>
-              </a>
-          </div> -->
         </div>
         <div class="col-sm-8 text-right">
           <ul class="list-inline top-dark-right">
-            <li><a href="#"><i class="fa fa-lock"></i> Login</a></li>
-            <li><a href="#"><i class="fa fa-user"></i> Sign Up</a></li>
+            <% if spree_current_user %>
+              <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+              <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+            <% else %>
+              <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+              <li>
+                <%= link_to Spree.t(:signup), spree_signup_path %>
+              </li>
+            <% end %>
             <li id="link-to-cart" data-hook>
               <noscript>
                 <%= link_to Spree.t(:cart), '/cart' %>
@@ -52,7 +45,7 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to 'About', main_app.page_path('about') %>
+            <%= link_to 'Gallery', main_app.page_path('gallery') %>
           </li>
           <li>
             <%= link_to 'Contact', main_app.page_path('contact') %>

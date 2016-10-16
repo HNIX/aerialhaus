@@ -1,0 +1,14 @@
+//= require spree/theme/owl.carousel.min
+//= require spree/theme/jquery.sticky
+//= require spree/theme/jquery.flexslider-min
+//= require spree/theme/waypoints.min
+//= require spree/theme/jquery.mb.YTPlayer.min
+//= require spree/theme/jquery.isotope.min
+//= require spree/theme/jquery.imagesloaded.min
+//= require spree/theme/custom
+//= require spree/theme/isotope-custom
+//= require spree/theme/typed
+//= require plugins/cubeportfolio/pace.min
+//= require plugins/video-background/core
+//= require plugins/video-background/transition
+//= require plugins/video-background/background

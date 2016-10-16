@@ -1,5 +1,6 @@
 <% @body_id = 'cart' %>
-<div data-hook="cart_container">
+<div class="divide60"></div>
+<div data-hook="cart_container" class="container">
   <h1><%= Spree.t(:shopping_cart) %></h1>
 
   <% if @order.line_items.empty? %>
@@ -20,7 +21,7 @@
           </div>
           <hr />
           <div class="links columns sixteen alpha omega" data-hook="cart_buttons">
-            <%= order_form.text_field :coupon_code, :size => 10, :placeholder => Spree.t(:coupon_code), class: "form-control" %>
+            <%= order_form.text_field :coupon_code, :size => 20, :placeholder => Spree.t(:coupon_code), class: "form-control" %>
             <%= button_tag :class => 'primary btn btn-success', :id => 'update-button' do %>
               <%= Spree.t(:update) %>
             <% end %>
@@ -36,7 +37,7 @@
     <div id="empty-cart" data-hook>
       <%= form_tag empty_cart_path, :method => :put do %>
         <p id="clear_cart_link" data-hook>
-        <%= submit_tag Spree.t(:empty_cart), :class => 'button gray btn btn-default' %>
+        <%= submit_tag Spree.t(:empty_cart), :class => 'button btn btn-default' %>
         <%= Spree.t(:or) %>
         <%= link_to Spree.t(:continue_shopping), products_path, :class => 'continue button gray btn btn-link' %>
         </p>

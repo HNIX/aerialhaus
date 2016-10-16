@@ -1,5 +1,7 @@
-<div class="<%= @content_class || 'container' %>">
+<div class="main-wrapper">
+  <%= render :partial => 'spree/shared/header' %>
   <div id="wrapper" class="row" data-hook>
+    <div class="divide60"></div>
     <%= taxon_breadcrumbs(@taxon) %>
     <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
     <div id="content" class="columns <%= !content_for?(:sidebar) ? "sixteen" : "twelve omega" %>" data-hook>
