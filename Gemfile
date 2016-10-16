@@ -32,7 +32,8 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'aws-sdk'
 gem 'figaro'
 gem 'high_voltage'
-
+gem 'mail_form'
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
