@@ -22,7 +22,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  config.assets.compile = true
+  config.assets.compile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
