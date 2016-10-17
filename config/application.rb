@@ -8,7 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Aerialhaus
   class Application < Rails::Application
-    config.serve_static_assets = true
     
     config.to_prepare do
       # Load application's model / class decorators
