@@ -34,7 +34,6 @@ gem 'figaro'
 gem 'high_voltage'
 gem 'mail_form'
 gem 'simple_form'
-gem "rack-timeout"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
