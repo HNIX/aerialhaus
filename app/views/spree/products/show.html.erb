@@ -2,12 +2,7 @@
 <% cache [I18n.locale, current_pricing_options, @product] do %>
   <div data-hook="product_show" class="container" itemscope itemtype="http://schema.org/Product">
     <% @body_id = 'product-details' %>
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
-      </div>
-    </div>
-    <div class="row">
+    <div class="row single-product">
       <div class="col-md-3" data-hook="product_left_part">
         <div data-hook="product_left_part_wrap">
 
@@ -35,9 +30,8 @@
       </div>
 
       <div class="col-md-6" data-hook="product_right_part">
-        <h6 class="product-section-title"><%= Spree.t('detail')%></h6>
-        <div data-hook="product_right_part_wrap" class="panel panel-default">
-          <div class="panel-body">
+        <div data-hook="product_right_part_wrap" class="product-detail-desc">
+            <h3 class="title"><%= @product.name %></h3>
             <div id="product-description" data-hook="product_description">
 
               <div itemprop="description" data-hook="description">
@@ -50,7 +44,6 @@
 
             </div>
             <%= render :partial => 'taxons' %>
-          </div>
         </div>
       </div>
     </div>

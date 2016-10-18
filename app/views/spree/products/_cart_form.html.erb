@@ -1,9 +1,8 @@
-<%= form_for :order, :url => populate_orders_path, html: { class: 'form-inline' } do |f| %>
+<%= form_for :order, :url => populate_orders_path, html: { class: 'form-inline form-group' } do |f| %>
   <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
     <% if @product.variants_and_option_values_for(current_pricing_options).any? %>
-      <div id="product-variants" class="columns five alpha">
-        <h6 class="product-section-title"><%= Spree.t(:variants) %></h6>
+      <div id="product-variants" class="columns five alpha size form-group">
         <ul>
           <% @product.variants_and_option_values_for(current_pricing_options).each_with_index do |variant, index| %>
             <li>
