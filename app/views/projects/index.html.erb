@@ -1,0 +1,41 @@
+<div class="divide80"></div>
+  <div class="container">
+
+      <div class="center-heading">
+          <h2>Our portfolio</h2>
+          <span class="center-line"></span>
+      </div>
+
+      <ul class="filter list-inline">
+          <li><a class="active" href="#" data-filter="*">Show All</a></li>
+          <li><a href="#" data-filter=".photography">Photography</a></li>
+          <li><a href="#" data-filter=".illustration">illustration</a></li>
+          <li><a href="#" data-filter=".branding">branding</a></li>
+          <li><a href="#" data-filter=".web-design">web design</a></li>
+      </ul>
+      <div class="row">
+          <div class="portfolio-box iso-call col-4-space">
+              <% @projects.each do |project| %>
+                <div class="project-post photography branding">
+                    <div class="item-img-wrap ">
+                        <img src="img/img-8.jpg" class="img-responsive" alt="workimg">
+                        <div class="item-img-overlay">
+                            <a href="img/img-8.jpg" class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work-desc">
+                        <h3><%= link_to project.title, project %></h3>
+                        <span><%= project.created_at.strftime('%A, %B, %d') %></span>
+                    </div><!--work desc-->
+                </div><!--project post-->
+              <% end %>
+          </div>
+      </div>
+      <% if spree_current_user.respond_to?(:has_spree_role?) && spree_current_user.has_spree_role?('admin')  %>
+        <p>
+          <%= link_to "New Project", new_project_path %>
+        </p>
+      <% end %>
+  </div><!--container-->

@@ -1,0 +1,59 @@
+<div class="divide80"></div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div id="testi-carousel" class="owl-carousel owl-spaced">
+                  <div>
+                      <img src="img/showcase-1.jpg" class="img-responsive" alt="">
+                  </div>
+                  <div>
+                      <img src="img/showcase-2.jpg" class="img-responsive" alt="">
+                  </div>
+                  <div>
+                      <img src="img/showcase-3.jpg" class="img-responsive" alt="">
+                  </div>
+              </div>
+          </div>
+      </div><!--img slide row-->
+      <div class="divide35"></div>
+      <div class="row">
+          <div class="col-md-7">
+              <div class="project-detail">
+                  <h3><%= @project.title %></h3>
+                  <em class="margin-bottom-40"><%= @project.created_at.strftime('%A, %B, %d') %></em>
+                  <br>
+                  <p>
+                    <%= @project.description %>
+                  </p>
+
+              </div>
+          </div>
+
+          <div class="col-md-4 col-md-offset-1">
+              <div class="project-info">
+                  <h3>Project info</h3>
+                  <p>
+                      <strong>Client</strong> : Design_mylife<br>
+                      <strong>Category</strong> : <%= @project.category %><br>
+                      <strong>Project Url </strong>: Wrapbootstrap
+                  </p>
+                  <ul class="list-inline top-social">
+                      <li>Share:</li>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                  </ul>
+                  <br>
+                  <p><%= link_to "View Video", "http://#{@project.link}", class: 'btn btn-lg btn-theme-bg' if @project.link %></p>
+                    <% if spree_current_user.respond_to?(:has_spree_role?) && spree_current_user.has_spree_role?('admin')  %>
+                      <p>
+                        <%= link_to "Edit", edit_project_path(@project) %> |
+                        <%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>
+                      </p>
+                    <% end %>
+              </div>
+          </div>
+      </div><!--row-->
+  </div>

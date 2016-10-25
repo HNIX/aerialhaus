@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   match '/contacts',     to: 'contacts#new',             via: 'get'
   resources "contacts", only: [:new, :create]
+  resources "projects"
 
   get "pages/*id" => 'pages#show', as: :page, format: false
 
