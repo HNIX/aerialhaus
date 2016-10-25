@@ -1,33 +1,64 @@
 <div class="divide60"></div>
-<footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center margin30">
-                    <div class="footer-col footer-3">
-                        <h3>Contact Us</h3>
-                        <h3>info@aerialhaus.com</h3>
-                         <ul class="list-inline footer-social">
-                            <li>
-                                <a href="#" class="social-icon si-dark si-gray-round si-colored-facebook">
-                                    <i class="fa fa-facebook"></i>
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="social-icon si-dark si-gray-round si-colored-twitter">
-                                    <i class="fa fa-twitter"></i>
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="social-icon si-dark si-gray-round si-colored-pinterest">
-                                    <i class="fa fa-youtube"></i>
-                                    <i class="fa fa-youtube"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!--footer col-->
+<!--footer light 1 begin-->
+<footer class="footer-light-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 margin20">
+                <h3>Newsletter</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                </p>
+                <form role="form" class="subscribe-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter email to subscribe">
+                            <span class="input-group-btn">
+                                <button class="btn  btn-theme-bg btn-lg" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+            </div>
+
+            <div class="col-sm-4 col-sm-offset-2 margin30">
+                <h3>Find us</h3>
+                <p>
+                    Contact us for more information
+                </p>
+                <div class=" margin10 clearfix">
+                    <a href="#" class="social-icon si-dark si-colored-facebook">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon si-dark si-colored-twitter">
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon si-dark si-colored-linkedin">
+                        <i class="fa fa-linkedin"></i>
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon si-dark si-colored-google-plus">
+                        <i class="fa fa-youtube"></i>
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                </div><!--socials-->
+
+                <ul class="list-unstyled info">
+                    <li><i class="pe-7s-phone"></i> 615-970-9931</li>
+                    <li><i class="pe-7s-mail"></i> info@aerialhaus.com</li>
+                </ul>
+
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="footer-copyright text-center">
+        <div class="row">
+            <div class="col-sm-1">
+                <%= render partial: 'spree/shared/comodo_logo' %>
+            </div>
+            <div class="col-sm-6">
+                Copyright &copy; 2016. All right reserved. Aerial Haus.
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer end-->

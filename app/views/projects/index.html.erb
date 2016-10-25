@@ -2,23 +2,23 @@
   <div class="container">
 
       <div class="center-heading">
-          <h2>Our portfolio</h2>
+          <h2>Our projects</h2>
           <span class="center-line"></span>
       </div>
 
       <ul class="filter list-inline">
           <li><a class="active" href="#" data-filter="*">Show All</a></li>
-          <li><a href="#" data-filter=".photography">Photography</a></li>
-          <li><a href="#" data-filter=".illustration">illustration</a></li>
-          <li><a href="#" data-filter=".branding">branding</a></li>
-          <li><a href="#" data-filter=".web-design">web design</a></li>
+          <li><a href="#" data-filter=".commercial">Commercial Real Estate</a></li>
+          <li><a href="#" data-filter=".residential">Residential Real Estate</a></li>
+          <li><a href="#" data-filter=".event">Events</a></li>
+          <li><a href="#" data-filter=".other">Other</a></li>
       </ul>
       <div class="row">
           <div class="portfolio-box iso-call col-4-space">
               <% @projects.each do |project| %>
-                <div class="project-post photography branding">
+                <div class="project-post <%= project.category %>">
                     <div class="item-img-wrap ">
-                        <img src="img/img-8.jpg" class="img-responsive" alt="workimg">
+                        <%= image_tag project.image.url(:medium), class: "img-responsive" if project.image %>
                         <div class="item-img-overlay">
                             <a href="img/img-8.jpg" class="show-image">
                                 <span></span>
@@ -35,7 +35,7 @@
       </div>
       <% if can? :manage, @project %>
         <p>
-          <%= link_to "New Project", new_project_path %>
+          <%= link_to "New Project", new_project_path, class: 'btn btn-lg btn-theme-bg' %>
         </p>
       <% end %>
   </div><!--container-->
