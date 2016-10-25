@@ -47,7 +47,7 @@
                   </ul>
                   <br>
                   <p><%= link_to "View Video", "http://#{@project.link}", class: 'btn btn-lg btn-theme-bg' if @project.link %></p>
-                    <% if spree_current_user.respond_to?(:has_spree_role?) && spree_current_user.has_spree_role?('admin')  %>
+                    <% if can? :manage, @project %>
                       <p>
                         <%= link_to "Edit", edit_project_path(@project) %> |
                         <%= link_to "Delete", project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>

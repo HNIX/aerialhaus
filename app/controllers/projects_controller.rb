@@ -1,4 +1,5 @@
 class ProjectsController < Spree::StoreController
+  load_and_authorize_resource
   layout 'spree/layouts/spree_application'
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
