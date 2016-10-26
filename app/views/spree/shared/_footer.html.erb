@@ -4,18 +4,17 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 margin20">
-                <h3>Newsletter</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
-                </p>
-                <form role="form" class="subscribe-form">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter email to subscribe">
-                            <span class="input-group-btn">
-                                <button class="btn  btn-theme-bg btn-lg" type="submit">Subscribe</button>
-                            </span>
-                        </div>
-                    </form>
+                <% if cookies[:saved_lead] %>
+                    <h3>Newsletter</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                    </p>
+                    <p>
+                        Thank you for signing up!
+                    </p>
+                <% else %>
+                    <%= render 'spree/shared/newsletter_form' %>
+                <% end %>
             </div>
 
             <div class="col-sm-4 col-sm-offset-2 margin30">
@@ -50,13 +49,17 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright text-center">
-        <div class="row">
-            <div class="col-sm-1">
-                <%= render partial: 'spree/shared/comodo_logo' %>
-            </div>
-            <div class="col-sm-6">
-                Copyright &copy; 2016. All right reserved. Aerial Haus.
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 margin20">
+                    <p>
+                        Copyright &copy; 2016. All right reserved. Aerial Haus.
+                    </p>
+                </div>
+                <div class="col-sm-2 col-sm-offset-4">
+                    <%= render partial: 'spree/shared/comodo_logo' %>
+                </div>
             </div>
         </div>
     </div>

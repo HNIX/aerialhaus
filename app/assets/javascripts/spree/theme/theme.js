@@ -1,4 +1,3 @@
-//= require spree/theme/owl.carousel.min
 //= require spree/theme/jquery.sticky
 //= require spree/theme/jquery.flexslider-min
 //= require spree/theme/waypoints.min
@@ -9,6 +8,7 @@
 //= require spree/theme/isotope-custom
 //= require spree/theme/typed
 //= require plugins/cubeportfolio/pace.min
+//= require spree/theme/owl.carousel.min
 //= require plugins/video-background/core
 //= require plugins/video-background/transition
 //= require plugins/video-background/background

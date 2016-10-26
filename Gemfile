@@ -34,6 +34,7 @@ gem 'figaro'
 gem 'high_voltage'
 gem 'mail_form'
 gem 'simple_form'
+gem 'validates_email_format_of'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
