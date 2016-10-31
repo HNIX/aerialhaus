@@ -2,7 +2,7 @@
 <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
 </p>
-<%= simple_form_for Lead.new, :html=> { class: 'subscribe-form' }  do |f| %>
+<%= simple_form_for Lead.new, :url => main_app.leads_url, :html=> { class: 'subscribe-form' }  do |f| %>
     <div class="input-group">
         <%= f.input :email, input_html: { class: 'form-control' }, placeholder: "Enter email to subscribe", id: "email", label: false %>
         <span class="input-group-btn">
