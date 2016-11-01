@@ -8,7 +8,7 @@
 //= require spree/theme/isotope-custom
 //= require spree/theme/typed
 //= require plugins/cubeportfolio/pace.min
-//= require spree/theme/owl.carousel.min
+//= require plugins/owl-carousel/owl.carousel
 //= require plugins/video-background/core
 //= require plugins/video-background/transition
 //= require plugins/video-background/background

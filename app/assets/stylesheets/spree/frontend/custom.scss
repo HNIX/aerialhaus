@@ -235,7 +235,10 @@
 }
 
 .video-section .overlay {
-  background-color: rgba(34, 83, 120, 0.3);
+  background-image: url("https://s3-us-west-2.amazonaws.com/aerial-haus/images/diagmonds.png");
+  opacity: .2;
+  background-repeat: repeat;
+  background-color: rgba(34, 83, 120, 0.25);
 }
 
 .col-centered {
@@ -253,4 +256,20 @@
 
 .img-medium {
   width: 99%;
+}
+
+#project-carousel .owl-item {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+#project-carousel .owl-item img {
+  position: absolute;
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
+
 }

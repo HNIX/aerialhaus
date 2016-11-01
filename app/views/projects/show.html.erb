@@ -1,8 +1,8 @@
-<div class="divide80"></div>
+<div class="divide50"></div>
   <div class="container">
       <div class="row">
           <div class="col-md-12">
-              <div id="project-carousel" class="owl-carousel owl-spaced">
+              <div id="project-carousel" class="owl-carousel owl-theme">
                   <div>
                       <%= image_tag @project.image.url, class: "img-responsive" if @project.image %>
                   </div>
@@ -51,12 +51,15 @@
           </div>
       </div><!--row-->
   </div>
-  <%= content_for :javascript do %>
     <script>
-      $(document).ready(function() {
+      $(document).ready(function(){
 
-        $("#project-carousel").owlCarousel();
+        $('#project-carousel').owlCarousel({
+          navigation : true, // Show next and prev buttons
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem:true
+        });
 
       });
     </script>
-  <% end %>
