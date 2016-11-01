@@ -46,7 +46,7 @@ class ProjectsController < Spree::StoreController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :link, :image, :category)
+    params.require(:project).permit(:title, :description, :link, :image, :category, :client)
   end
 
 end

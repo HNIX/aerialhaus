@@ -19,6 +19,7 @@
                   <p>
                     <%= @project.description %>
                   </p>
+                  <p><%= link_to "View Video", "http://#{@project.link}", class: 'btn btn-lg btn-theme-bg' if @project.link %></p>
 
               </div>
           </div>
@@ -27,20 +28,18 @@
               <div class="project-info">
                   <h3>Project info</h3>
                   <p>
-                      <strong>Client</strong> : Design_mylife<br>
-                      <strong>Category</strong> : <%= @project.category %><br>
-                      <strong>Project Url </strong>: Wrapbootstrap
+                    <% if @project.client %>
+                      <strong>Client</strong>: <%= @project.client.humanize %><br>
+                    <% end %>
+                    <% if @project.category %>
+                      <strong>Category</strong>: <%= @project.category.humanize %><br>
+                    <% end %>
                   </p>
-                  <ul class="list-inline top-social">
-                      <li>Share:</li>
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                  </ul>
                   <br>
-                  <p><%= link_to "View Video", "http://#{@project.link}", class: 'btn btn-lg btn-theme-bg' if @project.link %></p>
+                  <h3>Share</h3>
+                  <%= social_share_button_tag(@project.title) %>
+                  <br />
+
                     <% if can? :manage, @project %>
                       <p>
                         <%= link_to "Edit", edit_project_path(@project) %> |
