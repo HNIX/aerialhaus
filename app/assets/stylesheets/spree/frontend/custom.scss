@@ -53,6 +53,13 @@
 
 .navbar-brand {
   padding: 5px 0px 0px 0px;
+
+  @media (max-width: 768px) {
+      img{margin-left: 10px;}
+  }
+  @media (max-width: 1024px) {
+      img{margin-left: 10px;}
+  }
 }
 
 .navbar {
@@ -241,6 +248,15 @@
   background-color: rgba(34, 83, 120, 0.25);
 }
 
+.video-section {
+  @media (max-width: 768px) {
+      .video-overlay h1{font-size:50px;}
+  }
+  @media (max-width: 1024px) {
+      .video-overlay h1{font-size:55px;}
+  }
+}
+
 .col-centered {
     display:inline-block;
     float:none;
@@ -303,10 +319,20 @@
 
   @media (max-width: 768px) {
       .m-text-center {text-align:center;}
-      .call-to-action h1{font-size:20px;}
+      h1{font-size:40px;}
+      .btn{margin-top: 30px;}
   }
   @media (max-width: 1024px) {
       .m-text-center {text-align:center;}
-      .call-to-action h1{font-size:25px;}
+      h1{font-size:40px;}
   }
+}
+
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: white;
 }
