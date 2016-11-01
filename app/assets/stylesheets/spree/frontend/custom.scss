@@ -7,7 +7,7 @@
 }
 
 .call-to-action  strong {
-      color: #ba9753;
+      color: #FFD34E;
 }
 
 .hidden {
@@ -232,4 +232,25 @@
 .btn-right {
   position: absolute;
   right: 50px;
+}
+
+.video-section .overlay {
+  background-color: rgba(34, 83, 120, 0.3);
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.img-medium {
+  width: 99%;
 }
