@@ -1,61 +1,62 @@
 <div class="divide60"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2">
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
 
-            </div>
-            <div class="col-md-8 col-offset-md-4">
-                    <div class="center-heading">
-                        <h2>Contact us</h2>
-                        <span class="center-line"></span>
-                        <p>
-                            Phone: 615-970-9931, Email: info@aerialhaus.com
-                            </p>
-                    </div>
-                <div class="divide10"></div>
-                <div class="form-contact">
-                    <div class="required">
-                        <p>( <span>*</span> fields are required )</p>
-                    </div>
-                    <%= simple_form_for @contact, :html => {:id => "contactForm"} do |f| %>
-                      <div class="row contact-row">
-                        <div class="col-md-6">
-                          <div class="row control-group">
-                              <div class="form-group col-xs-12 controls">
-                                  <%= f.input :name, :required => true, input_html: { class: 'form-control' }, placeholder: "Name", id: "name", label: 'Name' %>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="row control-group">
-                              <div class="form-group col-xs-12 controls">
-                                  <%= f.input :email, :required => true, input_html: { class: 'form-control' }, placeholder: "Email", id: "email" %>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row control-group">
-                          <div class="form-group col-xs-12  controls">
-                              <%= f.input :phone_number, :as => :text, input_html: { class: 'form-control' }, placeholder: "Phone Number" %>
-                          </div>
-                      </div>
+        </div>
+        <div class="col-md-8 col-offset-md-4">
+                <div class="center-heading">
+                    <h2>Contact us</h2>
+                    <span class="center-line"></span>
+                    <p>
+                        Phone: 615-970-9931, Email: info@aerialhaus.com
+                        </p>
+                </div>
+            <div class="divide10"></div>
+            <div class="form-contact">
+                <div class="required">
+                    <p>( <span>*</span> fields are required )</p>
+                </div>
+                <%= simple_form_for @contact, :html => {:id => "contactForm"} do |f| %>
+                  <div class="row contact-row">
+                    <div class="col-md-6">
                       <div class="row control-group">
                           <div class="form-group col-xs-12 controls">
-                              <%= f.input :message, :as => :text, :required => true, input_html: { class: 'form-control' }, placeholder: "Please enter a message." %>
+                              <%= f.input :name, :required => true, input_html: { class: 'form-control' }, placeholder: "Name", id: "name", label: 'Name' %>
                           </div>
                       </div>
-                      <div class= "hidden">
-                        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-                      </div>
-                      </br>
-                      <div id="success"></div>
-                      <div class="row">
-                          <div class="form-group col-xs-12">
-                              <%= f.button :submit, 'Send message', :class=> "btn btn-theme-bg btn-lg" %>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row control-group">
+                          <div class="form-group col-xs-12 controls">
+                              <%= f.input :email, :required => true, input_html: { class: 'form-control' }, placeholder: "Email", id: "email" %>
                           </div>
                       </div>
-                    <% end %>
-                </div><!--contact form-->
-            </div>
+                    </div>
+                  </div>
+                  <div class="row control-group">
+                      <div class="form-group col-xs-12  controls">
+                          <%= f.input :phone_number, :as => :text, input_html: { class: 'form-control' }, placeholder: "Phone Number" %>
+                      </div>
+                  </div>
+                  <div class="row control-group">
+                      <div class="form-group col-xs-12 controls">
+                          <%= f.input :message, :as => :text, :required => true, input_html: { class: 'form-control' }, placeholder: "Please enter a message." %>
+                      </div>
+                  </div>
+                  <div class= "hidden">
+                    <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+                  </div>
+                  </br>
+                  <div id="success"></div>
+                  <div class="row">
+                      <div class="form-group col-xs-12">
+                          <%= f.button :submit, 'Send message', :class=> "btn btn-theme-bg btn-lg" %>
+                      </div>
+                  </div>
+                <% end %>
+            </div><!--contact form-->
         </div>
     </div>
+</div>
+<div class="divide60"></div>
