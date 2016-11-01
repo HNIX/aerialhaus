@@ -65,7 +65,7 @@
 
 .intro-video-section {
   background-image: image_url('home/pattern-2.png');
-  padding: 50px 0px 50px 0px;
+  padding: 100px 0px 100px 0px;
 
   p {
     font-size: 1.3em;
@@ -236,7 +236,7 @@
 
 .video-section .overlay {
   background-image: url("https://s3-us-west-2.amazonaws.com/aerial-haus/images/debut-dark.png");
-  opacity: .5;
+  opacity: .3;
   background-repeat: repeat;
   background-color: rgba(34, 83, 120, 0.25);
 }
@@ -272,4 +272,8 @@
       right: -9999px;
       margin: auto;
 
+}
+
+.intro-text-1 {
+  background: #5e5e5f;
 }
