@@ -19,7 +19,7 @@
                   <p>
                     <%= @project.description %>
                   </p>
-                  <p><%= link_to "View Video", "http://#{@project.link}", class: 'btn btn-lg btn-theme-bg' if @project.link %></p>
+                  <p><%= link_to "View Video", "http://#{@project.link}", class: 'btn btn-lg btn-theme-bg' if !@project.link.blank? %></p>
 
               </div>
           </div>
@@ -29,10 +29,10 @@
                   <h3>Project info</h3>
                   <p>
                     <% if @project.client %>
-                      <strong>Client</strong>: <%= @project.client.humanize %><br>
+                      <strong>Client</strong>: <%= @project.client.titleize %><br>
                     <% end %>
                     <% if @project.category %>
-                      <strong>Category</strong>: <%= @project.category.humanize %><br>
+                      <strong>Category</strong>: <%= @project.category.titleize %><br>
                     <% end %>
                   </p>
                   <br>

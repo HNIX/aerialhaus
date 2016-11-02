@@ -13,7 +13,7 @@ class ContactsController < Spree::StoreController
       flash.notice = 'Thank you for your message. We will contact you soon!'
       redirect_to spree.root_path
     else
-      flash.now[:error] = 'Cannot send message.'
+      flash.now.alert = 'Cannot send message. Please see errors on form.'
       render :new
     end
   end

@@ -11,10 +11,15 @@
     <div class="col-md-6">
       <div class="row control-group">
           <div class="form-group col-xs-12 controls">
-              <%= f.input :link, :required => true, input_html: { class: 'form-control' }, placeholder: "Link", id: "link" %>
+              <%= f.input :link, input_html: { class: 'form-control' }, placeholder: "Link", id: "link" %>
           </div>
       </div>
     </div>
+  </div>
+  <div class="row control-group">
+      <div class="form-group col-xs-12  controls">
+          <%= f.input :client, input_html: { class: 'form-control' }, placeholder: "Client" %>
+      </div>
   </div>
   <div class="row control-group">
       <div class="form-group col-xs-12  controls">
