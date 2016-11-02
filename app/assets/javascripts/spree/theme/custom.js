@@ -2,9 +2,12 @@
 
 jQuery(document).ready(function($) {
 
-    var navbar = $('.navbar-main'),
-    		distance = navbar.offset().top,
-        $window = $(window);
+    var navbar = $('.navbar-main');
+		if (navbar.length) {
+			var distance = navbar.offset().top;
+		}
+
+      $window = $(window);
 
 	    $window.scroll(function() {
 	    	if(($window.scrollTop() >= distance) && ($(".navbar-default").hasClass("navbar-main")))

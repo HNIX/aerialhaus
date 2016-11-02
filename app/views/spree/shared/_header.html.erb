@@ -45,25 +45,27 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to 'Gallery', main_app.projects_path %>
+            <%= link_to 'Our Work', main_app.projects_path %>
           </li>
-          <li>
-            <%= link_to 'Contact', main_app.contacts_path %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Store  <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+              <% @taxonomies.each do |taxonomy| %>
+                <li class="dropdown-submenu">
+                  <%= link_to "#", data: { toggle: "dropdown" }, "aria-haspopup" => 'true' do %>
+                    <%= taxonomy.name %>
+                  <% end %>
+                  <%= nav_tree(taxonomy.root, @taxon, 1) %>
+                </li>
+              <% end %>
+            </ul>
           </li>
           <li>
             <%= link_to 'Services', main_app.page_path('services') %>
           </li>
-          <% @taxonomies.each do |taxonomy| %>
-            <li class="dropdown">
-              <%= link_to "#", data: { toggle: "dropdown" }, "aria-haspopup" => 'true' do %>
-                <%= taxonomy.name %> <span class="caret"></span>
-              <% end %>
-              <%= nav_tree(taxonomy.root, @taxon, 1) %>
-            </li>
-          <% end %>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-
+          <li>
+            <%= link_to 'Contact', main_app.contacts_path %>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

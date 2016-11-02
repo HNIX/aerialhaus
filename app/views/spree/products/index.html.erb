@@ -17,6 +17,7 @@
     <% else %>
       <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
     <% end %>
+    <div class="divide60"></div>
   </div>
 
 <% else %>
@@ -24,4 +25,5 @@
   <div data-hook="homepage_products" class="container">
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
   </div>
+  <div class="divide60"></div>
 <% end %>
