@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 2'
 gem 'figaro'
 gem 'high_voltage'
 gem 'mail_form'
