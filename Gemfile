@@ -36,6 +36,7 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'validates_email_format_of'
 gem 'social-share-button'
+gem 'fog'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
