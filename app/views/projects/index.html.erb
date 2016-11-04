@@ -18,10 +18,7 @@
               <% @projects.each do |project| %>
                 <div class="project-post <%= project.category %>">
                     <div class="item-img-wrap ">
-                          <%= project.photos.first.image.url do |photo| %>
-                            <%= image_tag photo.image.url(:medium), class: "img-responsive" %>
-                          <% end %>
-
+                        <%= image_tag project.photos.first.image.url(:medium), class: "img-responsive" %>
                         <div class="item-img-overlay">
                           <%= project.photos.first do |photo| %>
                             <%= image_tag photo.image.url(:medium), class: "img-responsive" %>

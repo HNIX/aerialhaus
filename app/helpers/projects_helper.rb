@@ -1,5 +1,10 @@
 module ProjectsHelper
   def main_photo
-    @main_photo = @project.photo.first
+    if @project.photos.nil
+      "No photo"
+    else
+      @main_photo = @project.photo.where(:position => 1)
+      @main_photo.image.url
+    end
   end
 end
