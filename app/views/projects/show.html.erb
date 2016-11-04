@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-md-12">
             <div id="project-carousel" class="owl-carousel owl-theme">
+              <%= @project.photos.each do |photo| %>
                 <div>
-                  <%= @project.photos.each do |photo| %>
-                    <%= image_tag photo.image.url, class: "img-responsive" %>
-                  <% end %> 
+                  <%= image_tag photo.image.url, alt: "#{photo.image.image_file_name}", class: "img-responsive" %>
                 </div>
+              <% end %>
             </div>
         </div>
     </div><!--img slide row-->
