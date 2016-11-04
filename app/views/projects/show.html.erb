@@ -4,7 +4,9 @@
         <div class="col-md-12">
             <div id="project-carousel" class="owl-carousel owl-theme">
                 <div>
-                    <%= image_tag @project.image.url, class: "img-responsive" if @project.image %>
+                  <%= @project.photos.each do |photo| %>
+                    <%= image_tag photo.image.url, class: "img-responsive" %>
+                  <% end %> 
                 </div>
             </div>
         </div>

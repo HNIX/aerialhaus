@@ -12,6 +12,7 @@ class ProjectsController < Spree::StoreController
 
   def new
     @project = Project.new
+    3.times{ @project.photos.build }
   end
 
   def create
@@ -24,6 +25,7 @@ class ProjectsController < Spree::StoreController
   end
 
   def edit
+    3.times{ @project.photos.build }
   end
 
   def update
@@ -46,7 +48,7 @@ class ProjectsController < Spree::StoreController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :link, :image, :category, :client)
+    params.require(:project).permit(:title, :description, :link, :category, :client, photos_attributes: [ :_destroy, :id, :image ])
   end
 
 end

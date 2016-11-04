@@ -1,5 +1,16 @@
 <%= simple_form_for @project, :html => {:id => "contactForm"} do |f| %>
-  <%= f.input :image, as: :file %>
+  <div class="row control-group">
+    <div class="form-group col-xs-12  controls">
+      <%= f.simple_fields_for :photos do |photo| %>
+        <% if photo.object.new_record? %>
+          <%= photo.input :image, as: :file %>
+        <% else %>
+          <%= image_tag a.object.image.url(:thumb) %>
+          <%= a.input_field '_destroy', as: :boolean %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
   <div class="row contact-row">
     <div class="col-md-6">
       <div class="row control-group">

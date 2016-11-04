@@ -8,3 +8,4 @@
 //= require spree/frontend/cart
 //= require social-share-button
 //= require spree/theme/custom
+//= require projects
