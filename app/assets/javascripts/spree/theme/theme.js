@@ -11,3 +11,5 @@
 //= require plugins/video-background/core
 //= require plugins/video-background/transition
 //= require plugins/video-background/background
+//= require plugins/sortable/jquery.sortable
+//= require projects

@@ -336,3 +336,35 @@
 .navbar-default .navbar-toggle {
   border-color: white;
 }
+
+.sortable-placeholder {
+  border: 1px dashed #CCC;
+  background-color: #f9f9f9;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.flash, .errorExplanation {
+  margin-bottom: 0px;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+
+input[type="submit"], input[type="button"], input[type="reset"], button, a.button {
+  padding: 14px 28px 13px 28px;
+}
+
+.container .column, .container .columns {
+  float: none;
+}
+
+#empty-cart {
+  margin-top: 0px;
+}
+
+.btn-theme-bg {
+  background-color: #00ADEE;
+  border-color: #00ADEE;
+}

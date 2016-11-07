@@ -1,0 +1,12 @@
+<h2>Current Pictures</h2>
+  <table><tr>
+  <% @pics.each do |a| %>
+
+      <% if(!a.data.dirty?) %>
+      <td><tr><td><%= image_tag(a.url) %></td></tr>
+      <tr><td>Description:<%= a.description %></td></tr>
+      <tr><td><%=link_to("edit description",edit_polymorphic_url([@parentobj,a]))%></td><td><%=link_to("delete picture","updatepics?deletepicid=#{a.id}")%></td></tr></td>
+      <% end %>
+
+  <% end %>
+  </tr></table>

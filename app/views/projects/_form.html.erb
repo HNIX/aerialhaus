@@ -1,8 +1,9 @@
 <%= simple_form_for @project, :html => {:id => "contactForm"} do |f| %>
   <div class="row control-group">
-    <div class="form-group col-xs-12  controls">
+    <div class="form-group col-xs-12  controls sortable">
       <%= f.simple_fields_for :photos do |photo| %>
         <% if photo.object.new_record? %>
+          <p>Upload new pictures:</p>
           <%= photo.input :image, as: :file %>
         <% else %>
           <%= image_tag photo.object.image.url(:thumb) %>
